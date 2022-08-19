@@ -4,19 +4,20 @@ const [n, t] = input.shift().split(' ').map(Number);
 const lines = input.map(Number);
 function solution(t, arr) {
   let answer = 0;
-  let lt = 0;
+  let lt = 1;
   let rt = Math.max(...arr);
   while (lt <= rt) {
-    let mid = parseInt((lt + rt) / 2);
-    let sum = arr.map(e => parseInt(e / mid)).reduce((a, b) => a + b)
-    if (sum === t) {
-      answer = mid;
-      break;
+    let mid = Math.floor((lt + rt) / 2);
+    let sum = 0;
+    for (x of arr) {
+      sum += Math.floor(x / mid);
     }
-    else if (sum < t) rt = mid
-    else if (sum > t) lt = mid
-    console.log(answer, lt, mid, rt, sum, arr)
+    if (sum < t) rt = mid - 1;
+    else if (sum >= t) {
+      if (mid > answer) answer = mid;
+      lt = mid + 1;
+    }
   }
-  return answer
+  return answer;
 }
-console.log(solution(t, lines))
+console.log(solution(t, lines));
