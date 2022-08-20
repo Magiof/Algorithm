@@ -5,6 +5,7 @@ function solution(N) {
   if (N === 1) return;
   let number = N;
   let result = [];
+
   for (let i = 2; i <= Math.floor(N); i++) {
     if (number / i === Math.round(number / i)) {
       result.push(i);
@@ -13,7 +14,9 @@ function solution(N) {
       i--;
     }
   }
+
   if (result.length < 1) console.log(N);
   else console.log(result.join('\n'));
 }
+
 solution(N);
