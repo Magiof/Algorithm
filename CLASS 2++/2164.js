@@ -35,7 +35,11 @@ class LinkedList {
     return this.head.value;
   }
 
+
   removeHead() {
+    /**
+     * 어쩌고저쩌고
+     */
     this.head = this.head.next;
     this.head.prev = null;
     this._size--;
@@ -63,3 +67,5 @@ function solution(N) {
 }
 
 console.log(solution(N));
+const arr = new Array()
+arr.filter

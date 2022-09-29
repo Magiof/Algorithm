@@ -6,17 +6,21 @@ function solution(t, arr) {
   let answer = 0;
   let lt = 1;
   let rt = Math.max(...arr);
+  
   while (lt <= rt) {
     let mid = Math.floor((lt + rt) / 2);
     let sum = 0;
     for (x of arr) {
       sum += Math.floor(x / mid);
     }
+
     if (sum < t) rt = mid - 1;
+
     else if (sum >= t) {
       if (mid > answer) answer = mid;
       lt = mid + 1;
     }
+    console.log(mid)
   }
   return answer;
 }

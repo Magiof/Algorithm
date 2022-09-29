@@ -7,8 +7,8 @@ let input = fs
   .map((e) => e.replace('\r', ''));
 const [N, M] = input.shift().split(' ').map(Number);
 
-let chess1 = [];
-let chess2 = [];
+let chess1 = [];  //  WB로 시작하는 8x8 체스판
+let chess2 = [];  //  BW로 시작하는 8x8 체스판
 for (let i = 0; i <= 7; i++) {
   chess1[i] = '';
   chess2[i] = '';
@@ -59,6 +59,7 @@ for (let i = 0; i <= N - 8; i++) {
     }
     if (a < diff1) diff1 = a;
     if (b < diff2) diff2 = b;
+    console.log(board, diff1, diff2)
   }
 }
 
