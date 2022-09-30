@@ -27,7 +27,7 @@ function solution(arr, len) {
     cursor--;
   }
 
-  return answer.substring(0, answer.length - 1);
+  return answer.(0, answer.length - 1);
 }
 
 console.log(solution(input, len));
