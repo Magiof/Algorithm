@@ -33,7 +33,6 @@ function dfs(grid, x, y, visited) {
 }
 
 function solveComplexes(grid) {
-  const answer = [];
   let visited = new Array(N).fill(false).map(() => new Array(N).fill(false));
   let complexes = [];
 
@@ -45,9 +44,8 @@ function solveComplexes(grid) {
     }
   }
 
-  answer.push(complexes.length);
   complexes.sort((a, b) => a - b);
-  complexes.forEach((count) => answer.push(count));
+  const answer = [complexes.length, ...complexes];
 
   return answer;
 }
